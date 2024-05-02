@@ -5,6 +5,8 @@ I'm using neovim pre-built [install](https://github.com/neovim/neovim/blob/maste
 
 Standard path config is in `~/.config/nvim`
 
+base to config [apply](https://github.com/anchietajunior/nvim-configs/blob/add-lsp/README.md)
+
 ## Plugins manager
 
 [Vim-Plug](https://github.com/junegunn/vim-plug)
