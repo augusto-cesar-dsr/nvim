@@ -15,6 +15,9 @@ set mouse=a
 " Enable auto indentation in code
 set smartindent
 
+" Enable clipboard
+set clipboard+=unnamedplus
+
 " Set the Tab to 2 spaces
 set tabstop=2
 set shiftwidth=2
