@@ -12,3 +12,4 @@ This video is separeted in 4 parts:
 This video we can see 3 types of vim's users, but in final the important is a form where you adpted better to use!
 
 ## [Playlist to learn 0 to IDE](https://www.youtube.com/watch?v=zHTeCSVAFNY&list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn)
+ * [Using lua on vim file](https://github.com/nanotee/nvim-lua-guide)
