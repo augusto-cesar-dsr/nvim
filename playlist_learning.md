@@ -1,3 +1,4 @@
+# Playlist and content that i've used and use to learn about and apply the VIM
 ## [30 Neovim commands you NEED to know](https://www.youtube.com/watch?v=RSlrxE21l_k)
 This video is separeted in 4 parts:
  * [search and replace](https://www.youtube.com/watch?v=RSlrxE21l_k&t=60s)
