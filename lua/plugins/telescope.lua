@@ -6,7 +6,6 @@ return {
     vim.keymap.set('n', '<C-p>', builtin.find_files, {})
     -- For work, needs ripgrep packeg installed
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>l', builtin.buffers, {})
   end
 }
 
