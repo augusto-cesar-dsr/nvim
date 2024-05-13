@@ -2,10 +2,15 @@
 -- Enable Ruler
 vim.cmd("set ru")
 vim.g.mapleader = ","
+vim.g.background = "dark"
+vim.opt.swapfile = false
 
 -- Show the line number
-vim.cmd("set number")
-vim.cmd("set relativenumber")
+-- vim.cmd("set number")
+-- vim.cmd("set relativenumber")
+vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable Syntax Highlighting
 vim.cmd("syntax enable")
@@ -33,5 +38,11 @@ vim.keymap.set('n', '<leader>z', ':u<CR>', {})
 vim.keymap.set('n', '<leader>Q', ':qa!<CR>', {})
 -- Leader+q: Executes :bw (Delete buffer alternative) like Command+w
 vim.keymap.set('n', '<leader>q', ':bw<CR>', {})
+
+-- Navigate vim panes better
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 

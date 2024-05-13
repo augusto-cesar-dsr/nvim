@@ -45,7 +45,7 @@ return {
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.ruby_lsp.setup({
+			lspconfig.solargraph.setup({
 				capabilities = capabilities,
 			})
 
