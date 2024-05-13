@@ -33,7 +33,7 @@ vim.cmd("set shiftwidth=2")
 
 -- Customized hotkeys
 -- Leader+z: Executes :u (undo) like Command+z or Control+z
-vim.keymap.set('n', '<leader>z', ':u<CR>', {})
+--vim.keymap.set('n', '<leader>z', ':u<CR>', {})
 -- Leader+Q: Executes :qa! (Force quit all) like Command+q or ALT+F4
 vim.keymap.set('n', '<leader>Q', ':qa!<CR>', {})
 -- Leader+q: Executes :bw (Delete buffer alternative) like Command+w

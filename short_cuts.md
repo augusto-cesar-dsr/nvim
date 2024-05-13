@@ -1,55 +1,57 @@
 # Save short cuts below to use this config
-> confi based on [cpow repository](https://github.com/cpow/neovim-for-newbs/tree/main)
+> config based on [cpow repository](https://github.com/cpow/neovim-for-newbs/tree/main)
 
 leader = ','
 
 ### Access Documentation
-"<C-b>"     = cmp.mapping.scroll_docs(-4),
-"<C-f>"     = cmp.mapping.scroll_docs(4),
-"<C-Space>" = cmp.mapping.complete(),
-"<C-e>"     = cmp.mapping.abort(),
-"<CR>"      = cmp.mapping.confirm({ select = true }),
+"C-b"     = scroll_docs(-4)\
+"C-f"     = scroll_docs(4)\
+"C-Space" = complete()\
+"C-e"     = abort()\
+"CR"      = confirm({ select = true })
 
 ### Git hacks 
 > mode: *normal*
 
-"<leader>gp" = ":Gitsigns preview_hunk<CR>"
-"<leader>gt" = ":Gitsigns toggle_current_line_blame<CR>"
+"leader + gp" = ":Gitsigns preview_hunk"\
+"leader + gt" = ":Gitsigns toggle_current_line_blame"
 
 ### LSP shortcut
 > mode: *normal*
 
-"K"          = hover
-"gd"         = definition
-"<leader>ca" = code_action
-"<leader>gf" = format
+"K"          = hover\
+"gd"         = definition\
+"leader + ca" = code_action\
+"leader + gf" = format
 
 > mode: *visual*
 
-"<leader>ca" = code_action
+"leader + ca" = code_action
 
 ### Navigation
 > mode: *normal*
 
-'<C-n>'      = ':Neotree filesystem reveal right<CR>'
-'<leader>bf' = ':Neotree buffers reveal float<CR>'
+'C-n'      = ':Neotree filesystem reveal right'\
+'leader + bf' = ':Neotree buffers reveal float'
 
-"-"                = toggle_float
-"<C-p>"            = find_files
-"<leader>fg"       = live_grep
-"<leader><leader>" = oldfiles
+"-"                = toggle_float\
+"C-p"            = find_files\
+"leader + fg"       = live_grep\
+"leader + leader " = oldfiles
 
  - Customized hotkeys
- - Leader+q: Executes :bw (Delete buffer alternative) like Command+w
-"<leader>q" = ":bw<CR>"
+ - Leader+q: Executes :bw (Delete buffer alternative) like Command+w\
+\
+"leader + q" = ":bw"
 
- - Navigate vim panes better
-'<c-k>' = ':wincmd k<CR>'
-'<c-j>' = ':wincmd j<CR>'
-'<c-h>' = ':wincmd h<CR>'
-'<c-l>' = ':wincmd l<CR>'
+ - Navigate vim panes better\
+\
+'c-k' = ':wincmd k'\
+'c-j' = ':wincmd j'\
+'c-h' = ':wincmd h'\
+'c-l' = ':wincmd l'
 
 ### Others
 > mode: *normal*
 
-'<leader>h' = ':nohlsearch<CR>'
+'leader + h' = ':nohlsearch'\
