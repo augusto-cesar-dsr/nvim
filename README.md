@@ -5,15 +5,35 @@ I'm using neovim pre-built [install](https://github.com/neovim/neovim/blob/maste
 
 Standard path config is in `~/.config/nvim`
 
-base to config [apply](https://github.com/anchietajunior/nvim-configs/blob/add-lsp/README.md)
+base to config [apply](https://github.com/cpow/neovim-for-newbs/tree/main)
 
 ## Plugins manager
 
-[Vim-Plug](https://github.com/junegunn/vim-plug)
+[Lazy](https://github.com/folke/lazy.nvim.git)
 
 ### Plugins
 
-- Vim-devicons (Icons)
-- NERDTree (File manager)
-- Gruvbox (Theme)
-- Telescope (Find files and find in files)
+- "LuaSnip"
+- "catppuccin"
+- "cmp-nvim-lsp"
+- "cmp_luasnip"
+- "friendly-snippets"
+- "gitsigns.nvim"
+- "lazy.nvim"
+- "lualine.nvim"
+- "mason-lspconfig.nvim"
+- "mason.nvim"
+- "neo-tree.nvim"
+- "none-ls.nvim"
+- "nui.nvim"
+- "nvim-cmp"
+- "nvim-lspconfig"
+- "nvim-treesitter"
+- "nvim-web-devicons"
+- "oil.nvim"
+- "plenary.nvim"
+- "swagger-preview.nvim"
+- "telescope-ui-select.nvim"
+- "telescope.nvim"
+- "vim-fugitive"
+
