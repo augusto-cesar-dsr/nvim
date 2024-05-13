@@ -54,4 +54,4 @@ leader = ','
 ### Others
 > mode: *normal*
 
-'leader + h' = ':nohlsearch'\
+'leader + h' = ':nohlsearch'
