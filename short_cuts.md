@@ -19,19 +19,16 @@ leader = ','
 ### LSP shortcut
 > mode: *normal*
 
-"K"          = hover\
-"gd"         = definition\
+"K"           = hover\
+"leader + gd" = definition\
+"leader + gr" = references\
 "leader + ca" = code_action\
 "leader + gf" = format
-
-> mode: *visual*
-
-"leader + ca" = code_action
 
 ### Navigation
 > mode: *normal*
 
-'C-n'      = ':Neotree filesystem reveal right'\
+'C-n'         = ':Neotree filesystem reveal right'\
 'leader + bf' = ':Neotree buffers reveal float'
 
 "-"                = toggle_float\
