@@ -13,7 +13,7 @@ leader = ','
 ### Git hacks 
 > mode: *normal*
 
-"leader + gp" = ":Gitsigns preview_hunk"\
+"leader + gv" = ":Gitsigns preview_hunk"\
 "leader + gt" = ":Gitsigns toggle_current_line_blame"
 
 ### LSP shortcut
