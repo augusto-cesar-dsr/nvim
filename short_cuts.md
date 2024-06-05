@@ -25,6 +25,15 @@ leader = ','
 "leader + ca" = code_action\
 "leader + gf" = format
 
+> run tests using a plugin
+
+"<leader>t" = ":TestNearest" => run test in actualy line\
+"<leader>T" = ":TestFile" => run test file\
+"<leader>a" = ":TestSuite" => run all test path\
+"<leader>l" = ":TestLast" => run last command test \
+"<leader>g" = ":TestVisit" => go to last test runned
+
+
 ### Navigation
 > mode: *normal*
 
@@ -41,12 +50,12 @@ leader = ','
 \
 "leader + q" = ":bw"
 
- - Navigate vim panes better\
+ - Navigate vim and tmux panes better\
 \
-'c-k' = ':wincmd k'\
-'c-j' = ':wincmd j'\
-'c-h' = ':wincmd h'\
-'c-l' = ':wincmd l'
+'c-k' = ':wincmd k' => go left\
+'c-j' = ':wincmd j' => go down\
+'c-h' = ':wincmd h' => go up\
+'c-l' = ':wincmd l' => go right
 
 ### Others
 > mode: *normal*

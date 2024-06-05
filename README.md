@@ -36,4 +36,7 @@ base to config [apply](https://github.com/cpow/neovim-for-newbs/tree/main)
 - "telescope-ui-select.nvim"
 - "telescope.nvim"
 - "vim-fugitive"
+- "vim-tmux-navigator"
+- "vim-test"
+- "vimux"
 
