@@ -9,4 +9,5 @@ return {
   vim.keymap.set('n', '<leader>l', ':TestLast<CR>'),
   vim.keymap.set('n', '<leader>g', ':TestVisit<CR>'),
   vim.cmd("let test#strategy = 'vimux'"),
+  vim.cmd("let test#ruby#rspec#executable = 'spring rspec'"),
 }
