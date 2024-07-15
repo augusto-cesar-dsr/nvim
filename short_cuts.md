@@ -27,11 +27,11 @@ leader = ','
 
 > run tests using a plugin
 
-"<leader>t" = ":TestNearest" => run test in actualy line\
-"<leader>T" = ":TestFile" => run test file\
-"<leader>a" = ":TestSuite" => run all test path\
-"<leader>l" = ":TestLast" => run last command test \
-"<leader>g" = ":TestVisit" => go to last test runned
+"leader + t" = ":TestNearest" => run test in actualy line\
+"leader + T" = ":TestFile" => run test file\
+"leader + a" = ":TestSuite" => run all test path\
+"leader + l" = ":TestLast" => run last command test \
+"leader + g" = ":TestVisit" => go to last test runned
 
 
 ### Navigation
