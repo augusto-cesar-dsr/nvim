@@ -45,4 +45,5 @@ vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
-
+-- Set personal highligth
+vim.cmd("au BufNewFile,BufRead *.json.jbuilder set filetype=ruby")
