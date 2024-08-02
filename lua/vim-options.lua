@@ -47,3 +47,4 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- Set personal highligth
 vim.cmd("au BufNewFile,BufRead *.json.jbuilder set filetype=ruby")
+vim.cmd("au BufNewFile,BufRead *.rabl set filetype=ruby")
