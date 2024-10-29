@@ -24,7 +24,7 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.bashls.setup({
@@ -46,6 +46,9 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.solargraph.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.rubocop.setup({
 				capabilities = capabilities,
 			})
 
