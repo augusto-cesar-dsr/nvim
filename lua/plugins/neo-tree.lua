@@ -42,6 +42,44 @@ return {
             --".null-ls_*",
           },
         },
+      },
+      window = {
+        mappings = {
+          -- Example to create this function is https://github.com/nvim-neo-tree/neo-tree.nvim/discussions/370
+          -- But another method to make this is creating a key mappings and make a regex in filename to each one
+          ['Y'] = function(state)
+            -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
+            -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
+            local node = state.tree:get_node()
+            local filepath = node:get_id()
+            local filename = node.name
+            local modify = vim.fn.fnamemodify
+
+            -- Below is the responsible to map a regex in each option of filename string
+            local results = {
+              filepath,
+              modify(filepath, ':.'),
+              modify(filepath, ':~'),
+              filename,
+              modify(filename, ':r'),
+              modify(filename, ':e'),
+            }
+
+            vim.ui.select({
+              '1. Absolute path: ' .. results[1],
+              '2. Path relative to CWD: ' .. results[2],
+              '3. Path relative to HOME: ' .. results[3],
+              '4. Filename: ' .. results[4],
+              '5. Filename without extension: ' .. results[5],
+              '6. Extension of the filename: ' .. results[6],
+            }, { prompt = 'Choose to copy to clipboard:' }, function(choice)
+              local i = tonumber(choice:sub(1, 1))
+              local result = results[i]
+              vim.fn.setreg('+', result)
+              vim.notify('Copied: ' .. result)
+            end)
+          end
+        }
       }
     })
 
