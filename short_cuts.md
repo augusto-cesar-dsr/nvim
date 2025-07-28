@@ -34,39 +34,73 @@ leader = ','
 "leader + g" = ":TestVisit" => go to last test runned
 
 
-### Navigation
+### Navigation Enhanced
 > mode: *normal*
 
 'C-n'         = ':Neotree filesystem reveal right'\
-'leader + bf' = ':Neotree buffers reveal float'
+'leader + bf' = ':Neotree buffers reveal float'\
+'leader + a'  = 'Harpoon: Add file'\
+'C-e'         = 'Harpoon: Toggle menu'\
+'C-h'         = 'Harpoon: File 1'\
+'C-t'         = 'Harpoon: File 2'\
+'leader + so' = ':SymbolsOutline' => Toggle symbols outline
 
 "-"                = toggle_float\
 "C-p"            = find_files\
 "leader + fg"       = live_grep\
 "leader + leader " = oldfiles
 
- - Customized hotkeys
- - Leader+q: Executes :bw (Delete buffer alternative) like Command+w\
-\
-"leader + q" = ":bw"
-
- - Navigate vim and tmux panes better\
-\
-'c-k' = ':wincmd k' => go left\
-'c-j' = ':wincmd j' => go down\
-'c-h' = ':wincmd h' => go up\
-'c-l' = ':wincmd l' => go right
-
-### Amazon Q Integration
+### Development Experience
 > mode: *normal*
 
-'leader + aq' = Open Amazon Q with current context\
-'leader + ac' = Copy current context for Amazon Q\
-'leader + at' = Open Amazon Q in new tab
+'gcc'         = Comment/uncomment line\
+'gc'          = Comment/uncomment (visual mode)\
+'leader + td' = ':TodoTelescope' => Search TODOs\
+'leader + xx' = ':TroubleToggle' => Toggle diagnostics\
+'leader + xw' = 'Workspace Diagnostics'\
+'leader + xd' = 'Document Diagnostics'
 
 > mode: *visual*
 
-'leader + av' = Copy selected code for Amazon Q
+'J'           = Move selected lines down\
+'K'           = Move selected lines up
+
+### LSP Enhanced
+> mode: *normal*
+
+"K"           = hover (Lspsaga)\
+"gh"          = LSP Finder\
+"leader + gd" = definition\
+"leader + gr" = references\
+"leader + ca" = code_action (Lspsaga)\
+"leader + rn" = rename (Lspsaga)\
+"leader + pd" = peek_definition\
+"leader + gf" = format
+
+### Navigation Improvements
+> mode: *normal*
+
+'C-d'         = Scroll down and center\
+'C-u'         = Scroll up and center\
+'n'           = Next search result (centered)\
+'N'           = Previous search result (centered)
+
+### AI File Monitoring
+> mode: *normal*
+
+'leader + r'  = ':checktime' => Verificar mudanças no arquivo atual\
+'leader + R'  = ':bufdo checktime' => Verificar mudanças em todos os buffers\
+'leader + am' = ':ToggleAIMonitoring' => Ativar/desativar monitoramento intensivo (50ms)\
+'leader + as' = ':AIFileStatus' => Mostrar status de todos os arquivos abertos\
+'leader + ar' = ':ReloadAll' => Recarregar todos os buffers
+
+### Comandos AI Monitoring
+> mode: *command*
+
+':checktime'           = Verifica mudanças no arquivo atual\
+':ReloadAll'           = Verifica mudanças em todos os buffers abertos\
+':ToggleAIMonitoring'  = Ativa/desativa monitoramento intensivo para agentes AI\
+':AIFileStatus'        = Mostra status detalhado de todos os arquivos
 
 ### Others
 > mode: *normal*
