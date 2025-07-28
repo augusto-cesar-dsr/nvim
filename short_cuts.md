@@ -57,6 +57,17 @@ leader = ','
 'c-h' = ':wincmd h' => go up\
 'c-l' = ':wincmd l' => go right
 
+### Amazon Q Integration
+> mode: *normal*
+
+'leader + aq' = Open Amazon Q with current context\
+'leader + ac' = Copy current context for Amazon Q\
+'leader + at' = Open Amazon Q in new tab
+
+> mode: *visual*
+
+'leader + av' = Copy selected code for Amazon Q
+
 ### Others
 > mode: *normal*
 

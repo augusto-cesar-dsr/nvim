@@ -47,7 +47,9 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- Set personal highligth
 vim.cmd("au BufNewFile,BufRead *.json.jbuilder set filetype=ruby")
--- vim.cmd("au BufNewFile,BufRead *.rabl set filetype=ruby")
+vim.cmd("au BufNewFile,BufRead *.js.coffee set filetype=javascript")
+vim.cmd("au BufNewFile,BufRead *.hbs set filetype=html")
+vim.cmd("au BufNewFile,BufRead *.rabl set filetype=ruby")
 
 -- Disables providers
 vim.g.loaded_python3_provider = 0
