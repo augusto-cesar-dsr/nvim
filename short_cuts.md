@@ -63,12 +63,10 @@
 ### Basic LSP
 | Shortcut | Action | Description |
 |----------|--------|-------------|
-| `K` | `vim.lsp.buf.hover` | Show hover documentation |
 | `<leader>gd` | `vim.lsp.buf.definition` | Go to definition |
 | `<leader>gr` | `vim.lsp.buf.references` | Show references |
-| `<leader>ca` | `vim.lsp.buf.code_action` | Show code actions |
 
-### Enhanced LSP (LSP Saga)
+### Enhanced LSP (LSP Saga) - Primary LSP Interface
 | Shortcut | Action | Description |
 |----------|--------|-------------|
 | `K` | `Lspsaga hover_doc` | Enhanced hover documentation |
@@ -113,7 +111,7 @@
 |----------|--------|-------------|
 | `<leader>t` | `:TestNearest` | Run test at cursor |
 | `<leader>T` | `:TestFile` | Run current test file |
-| `<leader>a` | `:TestSuite` | Run all tests |
+| `<leader>ta` | `:TestSuite` | Run all tests |
 | `<leader>l` | `:TestLast` | Run last test command |
 | `<leader>g` | `:TestVisit` | Go to last test file |
 
