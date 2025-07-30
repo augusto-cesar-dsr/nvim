@@ -44,8 +44,6 @@ return {
         },
         pickers = {
           find_files = {
-            -- Usar fzf para busca de arquivos
-            find_command = { "fzf", "--type", "f" },
             hidden = true,
           },
           live_grep = {
