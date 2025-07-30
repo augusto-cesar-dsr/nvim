@@ -7,9 +7,9 @@ return {
         ui = {
           border = 'rounded',
         },
-        lightbulb = {
-          enable = false, -- Desabilita o lightbulb que pode ser irritante
-        },
+        -- lightbulb = {
+          -- enable = false, -- Desabilita o lightbulb que pode ser irritante
+        -- },
       })
       
       -- Keymaps melhorados

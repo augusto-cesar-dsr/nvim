@@ -10,10 +10,11 @@ return {
       vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "Harpoon: Add file" })
       vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu, { desc = "Harpoon: Toggle menu" })
       
-      vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end, { desc = "Harpoon: File 1" })
-      vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end, { desc = "Harpoon: File 2" })
-      vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end, { desc = "Harpoon: File 3" })
-      vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end, { desc = "Harpoon: File 4" })
+      -- Usando Alt+números para evitar conflitos
+      vim.keymap.set("n", "<M-1>", function() ui.nav_file(1) end, { desc = "Harpoon: File 1" })
+      vim.keymap.set("n", "<M-2>", function() ui.nav_file(2) end, { desc = "Harpoon: File 2" })
+      vim.keymap.set("n", "<M-3>", function() ui.nav_file(3) end, { desc = "Harpoon: File 3" })
+      vim.keymap.set("n", "<M-4>", function() ui.nav_file(4) end, { desc = "Harpoon: File 4" })
     end,
   },
   
