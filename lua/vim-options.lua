@@ -40,9 +40,9 @@ vim.opt.incsearch = true -- Busca incremental
 -- Melhorias visuais
 vim.opt.cursorline = true -- Highlight da linha atual
 vim.opt.signcolumn = "yes" -- Sempre mostrar coluna de sinais
-vim.opt.wrap = false -- Não quebrar linhas
-vim.opt.scrolloff = 8 -- Manter 8 linhas visíveis acima/abaixo do cursor
-vim.opt.sidescrolloff = 8 -- Manter 8 colunas visíveis
+-- vim.opt.wrap = false -- Não quebrar linhas
+-- vim.opt.scrolloff = 8 -- Manter 8 linhas visíveis acima/abaixo do cursor
+-- vim.opt.sidescrolloff = 8 -- Manter 8 colunas visíveis
 
 -- Melhorias de backup e undo
 vim.opt.backup = false
@@ -78,7 +78,7 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv") -- Move linha para cima
 
 -- Set personal highligth
 vim.cmd("au BufNewFile,BufRead *.json.jbuilder set filetype=ruby")
-vim.cmd("au BufNewFile,BufRead *.js.coffee set filetype=javascript")
+-- vim.cmd("au BufNewFile,BufRead *.js.coffee set filetype=javascript")
 vim.cmd("au BufNewFile,BufRead *.hbs set filetype=html")
 vim.cmd("au BufNewFile,BufRead *.rabl set filetype=ruby")
 
@@ -95,3 +95,37 @@ vim.api.nvim_create_user_command('ReloadAll', function()
   vim.cmd('bufdo checktime')
   vim.notify('Todos os buffers verificados para mudanças', vim.log.levels.INFO)
 end, {})
+
+-- Comando para limpar histórico de undo
+vim.api.nvim_create_user_command('ClearUndo', function()
+  local undodir = vim.fn.expand("~/.config/nvim/undodir")
+  vim.fn.system("rm -rf " .. undodir .. "/*")
+  vim.notify('Histórico de undo limpo!', vim.log.levels.INFO)
+end, { desc = 'Clear persistent undo history' })
+
+-- Comando para limpar undo do arquivo atual
+vim.api.nvim_create_user_command('ClearCurrentUndo', function()
+  vim.cmd('edit!')
+  vim.notify('Undo do arquivo atual limpo!', vim.log.levels.INFO)
+end, { desc = 'Clear undo history for current file' })
+
+-- Comando para abrir shortcuts
+vim.api.nvim_create_user_command('Shortcuts', function()
+  vim.cmd('edit ~/.config/nvim/short_cuts.md')
+end, { desc = 'Open shortcuts documentation' })
+
+-- Comando para preview markdown com glow
+vim.api.nvim_create_user_command('MarkdownPreview', function()
+  local file = vim.fn.expand('%:p')
+  if vim.bo.filetype == 'markdown' then
+    vim.cmd('leftabove vsplit | terminal glow ' .. vim.fn.shellescape(file))
+  else
+    vim.notify('Not a markdown file', vim.log.levels.WARN)
+  end
+end, { desc = 'Preview markdown with glow' })
+
+-- Atalhos
+vim.keymap.set('n', '<leader>?', ':Shortcuts<CR>', { desc = 'Open shortcuts help' })
+vim.keymap.set('n', '<leader>mp', ':MarkdownPreview<CR>', { desc = 'Preview markdown with glow' })
+vim.keymap.set('n', '<leader>cu', ':ClearUndo<CR>', { desc = 'Clear all undo history' })
+vim.keymap.set('n', '<leader>cU', ':ClearCurrentUndo<CR>', { desc = 'Clear current file undo' })

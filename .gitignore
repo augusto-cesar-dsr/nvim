@@ -2,3 +2,4 @@
 undodir/*
 !undodir/.keep
 
+lazy-lock.json

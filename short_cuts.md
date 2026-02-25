@@ -1,230 +1,260 @@
-# Neovim Configuration Shortcuts
-> Config based on [cpow repository](https://github.com/cpow/neovim-for-newbs/tree/main)
+# Neovim Shortcuts & Funcionalidades
 
-**Leader Key:** `,` (comma)
+## Configuração Básica
+- **Leader Key**: `,` (vírgula)
+- **Clipboard**: Integrado com sistema (Ctrl+C/Ctrl+V funciona)
+- **Indentação**: 2 espaços, tabs expandidos
+- **Números de linha**: Relativos e absolutos
+- **Undo persistente**: Histórico salvo entre sessões
 
-## 🚀 Core Navigation & Window Management
-> Mode: *normal*
+## Atalhos Básicos do Sistema
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<C-k>` | `:wincmd k` | Navigate to upper window |
-| `<C-j>` | `:wincmd j` | Navigate to lower window |
-| `<C-h>` | `:wincmd h` | Navigate to left window |
-| `<C-l>` | `:wincmd l` | Navigate to right window |
-| `<leader>h` | `:nohlsearch` | Clear search highlights |
-| `<leader>Q` | `:qa!` | Force quit all (like Cmd+Q) |
-| `<leader>q` | `:bw` | Delete current buffer (like Cmd+W) |
+### Navegação de Janelas/Panes
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `Ctrl+h` | Ir para janela esquerda | Navega entre splits horizontais |
+| `Ctrl+j` | Ir para janela abaixo | Navega entre splits verticais |
+| `Ctrl+k` | Ir para janela acima | Navega entre splits verticais |
+| `Ctrl+l` | Ir para janela direita | Navega entre splits horizontais |
 
-## 🧭 Enhanced Navigation & File Management
-> Mode: *normal*
+### Gerenciamento de Buffers
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,q` | Fechar buffer atual | Equivale a Ctrl+W, fecha apenas o buffer |
+| `,Q` | Forçar saída de tudo | Equivale a Alt+F4, força saída sem salvar |
+| `,h` | Limpar highlight de busca | Remove destaque da última busca |
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<C-n>` | `:Neotree filesystem reveal right` | Open file tree (right side) |
-| `<leader>bf` | `:Neotree buffers reveal float` | Show buffers in floating window |
-| `-` | `oil.toggle_float` | Toggle Oil file manager (floating) |
+### Navegação Melhorada
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `Ctrl+d` | Scroll down centralizado | Desce meia página e centraliza cursor |
+| `Ctrl+u` | Scroll up centralizado | Sobe meia página e centraliza cursor |
+| `n` | Próximo resultado centralizado | Busca próximo e centraliza |
+| `N` | Resultado anterior centralizado | Busca anterior e centraliza |
 
-### 🔍 Telescope (FZF-powered)
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<C-p>` | `telescope.find_files` | Find files with FZF |
-| `<leader>fg` | `telescope.live_grep` | Live grep search |
-| `<leader><leader>` | `telescope.oldfiles` | Recent files |
-| `<leader>fb` | `telescope.buffers` | Find buffers |
-| `<leader>fh` | `telescope.help_tags` | Help tags |
-| `<leader>fc` | `telescope.commands` | Commands |
-| `<leader>fk` | `telescope.keymaps` | Keymaps |
+### Modo Visual - Movimentação de Linhas
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `J` (visual) | Mover linha(s) para baixo | Move seleção para baixo mantendo indentação |
+| `K` (visual) | Mover linha(s) para cima | Move seleção para cima mantendo indentação |
 
-### 🎯 Harpoon Quick Navigation
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<leader>a` | `harpoon.add_file` | Add current file to Harpoon |
-| `<C-e>` | `harpoon.toggle_menu` | Toggle Harpoon menu |
-| `<Alt-1>` | `harpoon.nav_file(1)` | Navigate to Harpoon file 1 |
-| `<Alt-2>` | `harpoon.nav_file(2)` | Navigate to Harpoon file 2 |
-| `<Alt-3>` | `harpoon.nav_file(3)` | Navigate to Harpoon file 3 |
-| `<Alt-4>` | `harpoon.nav_file(4)` | Navigate to Harpoon file 4 |
+## Telescope (Busca Fuzzy)
 
-### 📋 Symbols & Code Structure
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<leader>so` | `:SymbolsOutline` | Toggle symbols outline |
+### Busca de Arquivos
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `Ctrl+p` | Buscar arquivos | Busca fuzzy em todos os arquivos do projeto |
+| `,fg` | Live grep | Busca texto em todos os arquivos |
+| `,<leader>` | Arquivos recentes | Lista arquivos abertos recentemente |
+| `,fb` | Buscar buffers | Lista todos os buffers abertos |
+| `,fh` | Help tags | Busca na documentação do Vim |
+| `,fc` | Comandos | Lista todos os comandos disponíveis |
+| `,fk` | Keymaps | Lista todos os atalhos configurados |
 
-### ⚡ Leap Motion (Quick Jump)
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `s` | `leap forward` | Leap forward to character |
-| `S` | `leap backward` | Leap backward to character |
+**Funcionalidades do Telescope:**
+- Busca em arquivos ocultos
+- Ignora node_modules, .git, dist, build
+- Preview de arquivos
+- Busca fuzzy inteligente
+- Interface otimizada para performance
 
-## 🔧 LSP & Code Intelligence
-> Mode: *normal*
+## Neo-tree (Explorador de Arquivos)
 
-### Basic LSP
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<leader>gd` | `vim.lsp.buf.definition` | Go to definition |
-| `<leader>gr` | `vim.lsp.buf.references` | Show references |
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `Ctrl+n` | Abrir Neo-tree | Abre explorador de arquivos à direita |
+| `,bf` | Buffers flutuante | Abre lista de buffers em janela flutuante |
 
-### Enhanced LSP (LSP Saga) - Primary LSP Interface
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `K` | `Lspsaga hover_doc` | Enhanced hover documentation |
-| `gh` | `Lspsaga lsp_finder` | LSP finder (definitions/references) |
-| `<leader>ca` | `Lspsaga code_action` | Enhanced code actions |
-| `<leader>rn` | `Lspsaga rename` | Smart rename |
-| `<leader>pd` | `Lspsaga peek_definition` | Peek definition |
+**Funcionalidades do Neo-tree:**
+- `Y` - Menu para copiar caminhos (absoluto, relativo, nome, etc.)
+- Mostra arquivos ocultos importantes (.env, .rspec, docker, etc.)
+- Oculta arquivos desnecessários (.DS_Store, thumbs.db)
+- Integração com Git (mostra status dos arquivos)
 
-### 🔍 Diagnostics & Trouble
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<leader>xx` | `:TroubleToggle` | Toggle diagnostics panel |
-| `<leader>xw` | `:TroubleToggle workspace_diagnostics` | Workspace diagnostics |
-| `<leader>xd` | `:TroubleToggle document_diagnostics` | Document diagnostics |
-## 💻 Development Experience
-> Mode: *normal*
+## Oil.nvim (Editor de Diretórios)
 
-### 💬 Comments
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `gcc` | Comment/uncomment line | Toggle line comment |
-| `gc` | Comment/uncomment (visual mode) | Toggle comment in visual mode |
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `-` | Abrir Oil | Edita diretório atual como se fosse um arquivo |
 
-### 📝 TODO & Task Management
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<leader>td` | `:TodoTelescope` | Search TODO/FIXME/NOTE comments |
+**Funcionalidades do Oil:**
+- Edita diretórios como texto
+- Renomeia, move, deleta arquivos editando o texto
+- Salva com `:w` para aplicar mudanças
 
-### 🎨 Surround & Text Objects
-> Uses nvim-surround plugin - examples:
-- `ys{motion}{char}` - Add surround
-- `ds{char}` - Delete surround  
-- `cs{old}{new}` - Change surround
+## LSP (Language Server Protocol)
 
-### 🌈 Color Preview
-> Automatic color highlighting in code (nvim-colorizer)
+### Navegação de Código
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,gd` | Ir para definição | Vai para onde função/variável foi definida |
+| `,gr` | Mostrar referências | Lista todos os usos da função/variável |
+| `,gi` | Ir para implementação | Vai para implementação da interface |
+| `,gt` | Ir para tipo | Vai para definição do tipo |
 
-## 🧪 Testing
-> Mode: *normal*
+### LSP Saga (Interface Melhorada)
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `gh` | LSP Finder | Busca avançada de definições e referências |
+| `,ca` | Code Actions | Menu de ações de código (refactor, fix, etc.) |
+| `,rn` | Renomear símbolo | Renomeia variável/função em todo o projeto |
+| `,pd` | Preview definição | Mostra definição em popup sem sair do local |
+| `K` | Hover documentation | Mostra documentação do símbolo sob cursor |
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<leader>t` | `:TestNearest` | Run test at cursor |
-| `<leader>T` | `:TestFile` | Run current test file |
-| `<leader>ta` | `:TestSuite` | Run all tests |
-| `<leader>l` | `:TestLast` | Run last test command |
-| `<leader>g` | `:TestVisit` | Go to last test file |
+### Diagnósticos (Trouble.nvim)
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,xx` | Toggle Trouble | Abre/fecha painel de diagnósticos |
+| `,xw` | Diagnósticos workspace | Mostra erros de todo o workspace |
+| `,xd` | Diagnósticos documento | Mostra erros apenas do arquivo atual |
 
-## 🔄 Git Integration
-> Mode: *normal*
+**Language Servers Configurados:**
+- **Lua** (lua_ls) - Para configuração do Neovim
+- **TypeScript/JavaScript** (ts_ls) - Para desenvolvimento web
+- **Bash** (bashls) - Para scripts shell
+- **CSS** (cssls) - Para estilos
+- **Docker** (dockerls) - Para Dockerfiles
+- **HTML** (html) - Para markup
+- **JSON** (jsonls) - Para configurações JSON
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<leader>gv` | `:Gitsigns preview_hunk` | Preview git hunk |
-| `<leader>gt` | `:Gitsigns toggle_current_line_blame` | Toggle git blame |
+## Git Integration
 
-## 🤖 AI File Monitoring
-> Mode: *normal*
+### Gitsigns
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,gv` | Preview hunk | Mostra diff do bloco atual |
+| `,gt` | Toggle blame | Liga/desliga blame da linha atual |
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<leader>r` | `:checktime` | Check current file for changes |
-| `<leader>R` | `:bufdo checktime` | Check all buffers for changes |
-| `<leader>am` | `:ToggleAIMonitoring` | Toggle intensive AI monitoring (50ms) |
-| `<leader>as` | `:AIFileStatus` | Show status of all open files |
-| `<leader>ar` | `:ReloadAll` | Reload all buffers |
+**Funcionalidades do Git:**
+- Indicadores visuais de mudanças na lateral
+- Integração com vim-fugitive para comandos Git
+- Preview de mudanças inline
 
-### AI Monitoring Commands
-> Mode: *command*
+## Testes (vim-test + vimux)
 
-| Command | Description |
-|---------|-------------|
-| `:checktime` | Check current file for external changes |
-| `:ReloadAll` | Check and reload all open buffers |
-| `:ToggleAIMonitoring` | Enable/disable intensive monitoring for AI agents |
-| `:AIFileStatus` | Show detailed status of all files |
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,t` | Teste mais próximo | Executa teste sob o cursor |
+| `,T` | Teste do arquivo | Executa todos os testes do arquivo |
+| `,ta` | Toda a suíte | Executa todos os testes do projeto |
+| `,l` | Último teste | Re-executa o último teste executado |
+| `,g` | Visitar teste | Vai para o último arquivo de teste |
 
-## 📋 Completion & Snippets
-> Mode: *insert*
+**Configuração de Testes:**
+- Usa vimux para executar em painel tmux
+- Configurado para RSpec com `RAILS_ENV=test`
+- Execução em background sem bloquear editor
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<C-b>` | `scroll_docs(-4)` | Scroll completion docs up |
-| `<C-f>` | `scroll_docs(4)` | Scroll completion docs down |
-| `<C-Space>` | `complete()` | Trigger completion |
-| `<C-e>` | `abort()` | Abort completion |
-| `<CR>` | `confirm({ select = true })` | Confirm completion |
+## Navegação Avançada
 
-## 🚀 Performance & Navigation Improvements
-> Mode: *normal*
+### Harpoon (Marcadores de Arquivos)
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,a` | Adicionar arquivo | Marca arquivo atual para acesso rápido |
+| `Ctrl+e` | Menu Harpoon | Abre menu de arquivos marcados |
+| `Alt+1` | Arquivo 1 | Vai para primeiro arquivo marcado |
+| `Alt+2` | Arquivo 2 | Vai para segundo arquivo marcado |
+| `Alt+3` | Arquivo 3 | Vai para terceiro arquivo marcado |
+| `Alt+4` | Arquivo 4 | Vai para quarto arquivo marcado |
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<C-d>` | `<C-d>zz` | Scroll down and center |
-| `<C-u>` | `<C-u>zz` | Scroll up and center |
-| `n` | `nzzzv` | Next search result (centered) |
-| `N` | `Nzzzv` | Previous search result (centered) |
+### Leap (Navegação Rápida)
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `s` | Leap forward | Pula para frente digitando 2 caracteres |
+| `S` | Leap backward | Pula para trás digitando 2 caracteres |
+| `gs` | Leap from window | Pula entre janelas |
 
-> Mode: *visual*
+### Symbols Outline
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,so` | Toggle outline | Abre/fecha painel de símbolos do arquivo |
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `J` | `:m '>+1<CR>gv=gv` | Move selected lines down |
-| `K` | `:m '<-2<CR>gv=gv` | Move selected lines up |
+## Autocompletion & Snippets
 
-## 🖥️ Tmux Integration
-> Mode: *normal*
+**Funcionalidades Automáticas:**
+- **nvim-cmp**: Autocompleção inteligente baseada em LSP
+- **LuaSnip**: Sistema de snippets expansível
+- **Autopairs**: Fecha automaticamente parênteses, chaves, aspas
+- **Friendly-snippets**: Biblioteca de snippets para várias linguagens
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `<C-h>` | `:TmuxNavigateLeft` | Navigate to left tmux pane |
-| `<C-j>` | `:TmuxNavigateDown` | Navigate to down tmux pane |
-| `<C-k>` | `:TmuxNavigateUp` | Navigate to up tmux pane |
-| `<C-l>` | `:TmuxNavigateRight` | Navigate to right tmux pane |
+**Navegação no Menu de Autocompleção:**
+- `Tab` / `Shift+Tab` - Navegar entre opções
+- `Enter` - Aceitar sugestão
+- `Ctrl+Space` - Forçar abertura do menu
 
-## 📁 Neo-tree Special Features
-> Mode: *neo-tree window*
+## Formatação e Linting
 
-| Shortcut | Action | Description |
-|----------|--------|-------------|
-| `Y` | Copy path options | Interactive menu to copy various path formats |
+**None-ls (Null-ls) Configurado:**
+- Formatação automática ao salvar
+- Linting em tempo real
+- Integração com ferramentas externas
 
-## 🛠️ Additional Tools
+## Utilitários
 
-### Swagger Preview
-> Available for API documentation files
+### Comandos Personalizados
+| Comando | Função | Descrição |
+|---------|--------|-----------|
+| `:ReloadAll` | Recarregar buffers | Verifica mudanças em todos os arquivos abertos |
+| `:Shortcuts` | Abrir shortcuts | Abre este documento no Neovim |
+| `:MarkdownPreview` | Preview markdown | Visualiza markdown com glow no terminal |
+| `:ClearUndo` | Limpar todo undo | Remove todo histórico de undo persistente |
+| `:ClearCurrentUndo` | Limpar undo atual | Remove undo apenas do arquivo atual |
 
-### Formatting & Linting
-> Automatic formatting with conform.nvim and none-ls.nvim
+### Atalhos de Documentação e Utilitários
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,?` | Abrir shortcuts | Abre este documento para consulta rápida |
+| `,mp` | Preview markdown | Visualiza arquivo markdown atual com glow |
+| `,cu` | Limpar todo undo | Remove todo histórico de undo persistente |
+| `,cU` | Limpar undo atual | Remove undo apenas do arquivo atual |
 
-### Auto-pairs
-> Automatic bracket/quote pairing with nvim-autopairs
+### Detecção de Tipos de Arquivo
+**Extensões Personalizadas:**
+- `.json.jbuilder` → Ruby
+- `.js.coffee` → JavaScript  
+- `.hbs` → HTML
+- `.rabl` → Ruby
 
----
+### Performance e Monitoramento
+- **Auto-reload**: Detecta mudanças externas automaticamente
+- **Lazy loading**: Plugins carregam apenas quando necessário
+- **File monitoring**: Monitora mudanças de agentes AI
+- **Update time**: 100ms para detecção rápida de mudanças
 
-## 📚 Plugin List Summary
+## Temas e Interface
 
-**Core Plugins:**
-- lazy.nvim (Plugin Manager)
-- telescope.nvim (Fuzzy Finder)
-- neo-tree.nvim (File Explorer)
-- nvim-lspconfig + mason.nvim (LSP)
-- nvim-cmp (Completion)
-- nvim-treesitter (Syntax Highlighting)
+**Catppuccin Theme:**
+- Tema escuro otimizado para programação
+- Cores suaves para reduzir fadiga ocular
+- Integração com todos os plugins
 
-**Enhanced Experience:**
-- harpoon (Quick Navigation)
-- lspsaga.nvim (Enhanced LSP UI)
-- trouble.nvim (Diagnostics)
-- Comment.nvim (Smart Comments)
-- todo-comments.nvim (TODO Highlighting)
-- gitsigns.nvim (Git Integration)
+**Lualine:**
+- Barra de status informativa
+- Mostra modo, branch Git, diagnósticos LSP
+- Indicadores de progresso para operações
 
-**AI & Monitoring:**
-- Custom auto-reload system
-- Intensive file monitoring for AI agents
-- Real-time change detection
+**Indent Blankline:**
+- Linhas guia de indentação
+- Facilita leitura de código aninhado
 
----
+## Dicas de Uso
 
-*For more details, see the individual plugin configurations in `lua/plugins/`*
+1. **Workflow Recomendado:**
+   - Use `Ctrl+p` para abrir arquivos rapidamente
+   - Marque arquivos importantes com `,a` (Harpoon)
+   - Use `,gd` para navegar no código
+   - Execute testes com `,t` durante desenvolvimento
+
+2. **Busca Eficiente:**
+   - `,fg` para buscar texto em todo projeto
+   - `,<leader>` para arquivos recentes
+   - `s` + 2 caracteres para navegação rápida
+
+3. **Depuração:**
+   - `,xx` para ver todos os erros
+   - `K` para documentação rápida
+   - `,ca` para ações de correção automática
+
+4. **Git Workflow:**
+   - `,gv` para ver mudanças antes de commit
+   - `,gt` para ver quem modificou cada linha

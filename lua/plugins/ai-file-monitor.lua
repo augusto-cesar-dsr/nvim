@@ -21,7 +21,7 @@ return {
           if intensive_monitoring then
             vim.notify('Monitoramento intensivo de AI ATIVADO', vim.log.levels.WARN)
             -- Timer para verificar mudanças a cada 50ms
-            local timer = vim.loop.new_timer()
+            local timer = vim.uv.new_timer()
             timer:start(50, 50, vim.schedule_wrap(function()
               if not intensive_monitoring then
                 timer:stop()
@@ -44,7 +44,7 @@ return {
             if vim.api.nvim_buf_is_loaded(buf) then
               local name = vim.api.nvim_buf_get_name(buf)
               if name ~= "" then
-                local modified = vim.api.nvim_buf_get_option(buf, 'modified')
+                local modified = vim.bo[buf].modified
                 table.insert(loaded_buffers, {
                   name = vim.fn.fnamemodify(name, ':t'),
                   path = name,
