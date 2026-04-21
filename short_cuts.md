@@ -145,6 +145,30 @@
 - Configurado para RSpec com `RAILS_ENV=test`
 - Execução em background sem bloquear editor
 
+## IA Generativa (Ollama @ pi-ai.local)
+
+### Assistente de Código (gen.nvim)
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,ia` | Menu Gen | Abre menu com todas opções de IA |
+| `,is` | Chat IA | Inicia conversa livre com o modelo |
+| `,ie` (visual) | Explicar | Explica o código selecionado |
+| `,ir` (visual) | Revisar | Sugere melhorias no código selecionado |
+| `,if` (visual) | Corrigir | Identifica e corrige bugs no código |
+
+**Modelos Recomendados para RPi 4:**
+- **qwen2.5-coder:1.5b**: O melhor para lógica de código (PADRÃO)
+- **llama3.2:1b**: Rápido para conversas gerais
+- **phi3.5:latest**: Mais potente (3.8B), porém mais lento no Pi 4
+
+## AI File Monitor (Agentes Externos)
+
+| Atalho | Função | Descrição |
+|--------|--------|-----------|
+| `,am` | Toggle monitor | Liga/desliga monitoramento de mudanças de IA externa |
+| `,as` | Status da monitoria | Mostra se a monitoria está ativa e para quais arquivos |
+| `,ar` | Forçar reload | Força recarregamento de todos os arquivos do projeto |
+
 ## Navegação Avançada
 
 ### Harpoon (Marcadores de Arquivos)

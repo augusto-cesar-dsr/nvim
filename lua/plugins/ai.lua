@@ -2,26 +2,45 @@ return {
   {
     "David-Kunz/gen.nvim",
     cmd = "Gen",
-    -- Você pode mapear teclas aqui seguindo seu padrão
     keys = {
-      { "<leader>aa", ":Gen<CR>", mode = { "n", "v" }, desc = "AI: Menu Gen" },
-      { "<leader>as", ":Gen Chat<CR>", mode = { "n", "v" }, desc = "AI: Chat" },
+      { "<leader>ia", ":Gen<CR>", mode = { "n", "v" }, desc = "AI: Menu" },
+      { "<leader>is", ":Gen Chat<CR>", mode = { "n", "v" }, desc = "AI: Chat" },
+      { "<leader>ie", ":Gen Explain_Code<CR>", mode = { "v" }, desc = "AI: Explicar" },
+      { "<leader>ir", ":Gen Review_Code<CR>", mode = { "v" }, desc = "AI: Revisar" },
+      { "<leader>if", ":Gen Fix_Code<CR>", mode = { "v" }, desc = "AI: Corrigir" },
     },
     opts = {
-      model = "deepseek-coder:1.3b", -- Modelo que baixamos no Pi
-      host = "pi-ai.local",          -- Hostname configurado no seu Pi
-      port = "11434",                -- Porta padrão do Ollama
-      display_mode = "float",        -- Janela flutuante (seu nvim já usa muito float)
-      show_prompt = true,            -- Útil para o seu lab de análise
+      -- Modelos recomendados para RPi4 8GB:
+      -- 1. qwen2.5-coder:1.5b (Equilíbrio perfeito - PADRÃO)
+      -- 2. llama3.2:1b (Rápido para chat geral)
+      -- 3. phi3.5:latest (3.8B - No limite da RAM, mas muito inteligente)
+      model = "qwen2.5-coder:1.5b",
+      host = "pi-ai.local",
+      port = "11434",
+      display_mode = "float", 
+      show_prompt = true,
       show_model = true,
-      -- Estilização para combinar com seu tema (provavelmente baseado em Drácula ou similar)
       no_auto_close = false,
-      init = function(options) pcall(io.popen, "ollama serve > /dev/null 2>&1 &") end,
-      -- O comando que será executado para chamar a API
-      command = function(options)
-        local body = {model = options.model, stream = true}
-        return "curl --silent --no-buffer -X POST http://" .. options.host .. ":" .. options.port .. "/api/generate -d '" .. vim.fn.json_encode(body) .. "'"
-      end,
+      -- Otimização para Raspberry Pi: Timeout maior e retry
+      retry_count = 2,
     },
+    config = function(_, opts)
+      local gen = require("gen")
+      gen.setup(opts)
+      
+      -- Prompts customizados para o seu Lab de análise
+      gen.prompts["Explain_Code"] = {
+        prompt = "Explique o seguinte código de forma concisa e técnica:\n$text",
+        replace = false,
+      }
+      gen.prompts["Review_Code"] = {
+        prompt = "Atue como um Engenheiro Senior. Revise este código buscando bugs, problemas de performance e melhorias de legibilidade:\n$text",
+        replace = false,
+      }
+      gen.prompts["Fix_Code"] = {
+        prompt = "Identifique erros no código abaixo e forneça a versão corrigida:\n$text",
+        replace = true,
+      }
+    end,
   },
 }
