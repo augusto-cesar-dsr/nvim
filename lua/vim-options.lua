@@ -51,7 +51,7 @@ vim.opt.undofile = true -- Undo persistente
 vim.opt.undodir = vim.fn.expand("~/.config/nvim/undodir")
 
 -- Configuração de logs do LSP
-vim.lsp.set_log_level("ERROR") -- Reduz logs do LSP para apenas erros
+vim.lsp.log.set_level("ERROR") -- Reduz logs do LSP para apenas erros
 
 -- Customized hotkeys
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')

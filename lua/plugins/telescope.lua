@@ -43,7 +43,7 @@ return {
           selection_caret = "➤ ",
         },
         pickers = {
-          find_files = {
+          find_files = { find_command = { "fzf", "-f", "" },
             hidden = true,
           },
           live_grep = {

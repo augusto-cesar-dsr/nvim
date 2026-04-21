@@ -121,7 +121,6 @@ Base config inspired by [cpow repository](https://github.com/cpow/neovim-for-new
 ├── lua/
 │   ├── vim-options.lua         # Core vim settings
 │   ├── plugins.lua             # Plugin loader
-│   ├── amazon-q/               # Amazon Q integration
 │   └── plugins/                # Individual plugin configs
 │       ├── auto-reload.lua     # AI file monitoring
 │       ├── ai-file-monitor.lua # Intensive monitoring

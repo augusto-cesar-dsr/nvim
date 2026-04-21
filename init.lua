@@ -1,3 +1,6 @@
+-- Ensure nvm node is available (nvm only loads in interactive shells)
+vim.env.PATH = "/home/augusto/.nvm/versions/node/v24.15.0/bin:" .. vim.env.PATH
+
 -- Package Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
@@ -13,5 +16,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", { rocks = { enabled = false } })
 
